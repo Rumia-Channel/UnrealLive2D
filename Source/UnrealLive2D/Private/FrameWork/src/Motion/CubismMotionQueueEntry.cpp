@@ -22,9 +22,9 @@ CubismMotionQueueEntry::CubismMotionQueueEntry()
     , _stateTimeSeconds(0.0f)
     , _stateWeight(0.0f)
     , _lastEventCheckSeconds(0.0f)
-    , _fadeOutSeconds(0.0f)  // ここに移動しました
-    , _motionQueueEntryHandle(NULL)
+    , _fadeOutSeconds(0.0f)
     , _IsTriggeredFadeOut(false)
+    , _motionQueueEntryHandle(NULL) //一番下に下げる
 {
     this->_motionQueueEntryHandle = this;
 }
