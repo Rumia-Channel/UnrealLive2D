@@ -18,10 +18,10 @@ class UNREALLIVE2D_API UCubismBpLib : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 	
 public:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Cubism")
 	static void InitCubism();
 
-	UFUNCTION(BlueprintCallable, BlueprintPure)
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Cubism")
 	static FString Get_CubismPath();
 
 };

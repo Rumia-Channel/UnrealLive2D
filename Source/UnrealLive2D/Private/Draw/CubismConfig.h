@@ -19,7 +19,7 @@ public:
 	 * If Opens
 	 * We will try to render all mask in a single texture if possible
 	 */
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "CubismModel")
 	bool bTryLowPreciseMask = true;
 
 };

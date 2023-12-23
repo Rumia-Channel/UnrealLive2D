@@ -44,7 +44,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "CubismModel")
 	void LoadFromPath(const FString& InPath);
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category = "CubismModel")
     void SetUpdatePaused(bool InIsPaused);
 
 public:
@@ -72,10 +72,10 @@ private:
 	//////////////////////////////////////////////////////////////////////////
 public:
     /** Event called while motion play ends */
-    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "CubismModel")
     void OnMotionPlayeEnd();
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category = "Cubism")
     bool OnTap(const FVector2D& InPos);
 
     /**
@@ -85,6 +85,6 @@ public:
      * @param InNo Group number of motion
      * @param InPriority Priori of motion to play
      */
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category = "CubismModel")
     void PlayMotion(const FString& InName, const int32 InNo, const EMotionPriority InPriority = EMotionPriority::EMP_Normal);
 };
