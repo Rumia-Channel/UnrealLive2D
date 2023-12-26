@@ -67,7 +67,7 @@ public class UnrealLive2D : ModuleRules
 
     if (Target.Platform == UnrealTargetPlatform.Win64)
     {
-      CubismLibPath += "lib/windows/x86_64/142";
+      CubismLibPath += "lib/windows/x86_64/143";
       PublicAdditionalLibraries.Add(String.Format(CubismLibPath + "/Live2DCubismCore_MTd.lib"));
     }
     else if (Target.Platform == UnrealTargetPlatform.Linux)
