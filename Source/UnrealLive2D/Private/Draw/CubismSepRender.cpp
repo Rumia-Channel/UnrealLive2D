@@ -327,20 +327,21 @@ void FCubismSepRender::InitRender(TSharedPtr<class FRawModel> InModel, const FMo
     //Flags |= TexCreate_Dynamic;
     FRHIResourceCreateInfo CreateInfo(TEXT("InitRenderSec"));
     CreateInfo.ClearValueBinding = FClearValueBinding(FLinearColor(1.0f, 1.0f, 1.0f, 1.0f));
-    //RenderStates.MaskBuffer = RHICreateTexture2D(bufferHeight, bufferHeight, EPixelFormat::PF_B8G8R8A8, 1, 1, Flags, CreateInfo);
-    RenderStates.MaskBuffer = RHICreateTexture(
-        FRHITextureCreateDesc::Create2D(CreateInfo.DebugName)
-        .SetExtent((int32)bufferHeight, (int32)bufferHeight)
-        .SetFormat(EPixelFormat::PF_B8G8R8A8)
-        .SetNumMips(1)
-        .SetNumSamples(1)
-        .SetFlags(Flags)
-        .SetInitialState(ERHIAccess::Unknown)
-        .SetExtData(CreateInfo.ExtData)
-        .SetBulkData(CreateInfo.BulkData)
-        .SetGPUMask(CreateInfo.GPUMask)
-        .SetClearValue(CreateInfo.ClearValueBinding)
-    );
+    RenderStates.MaskBuffer = RHICreateTexture2D(bufferHeight, bufferHeight, EPixelFormat::PF_B8G8R8A8, 1, 1, Flags, CreateInfo);
+    //UE5.0.3では↓は動作しない(エラー吐いた)
+    //RenderStates.MaskBuffer = RHICreateTexture(
+    //    FRHITextureCreateDesc::Create2D(CreateInfo.DebugName)
+    //    .SetExtent((int32)bufferHeight, (int32)bufferHeight)
+    //    .SetFormat(EPixelFormat::PF_B8G8R8A8)
+    //    .SetNumMips(1)
+    //    .SetNumSamples(1)
+    //    .SetFlags(Flags)
+    //    .SetInitialState(ERHIAccess::Unknown)
+    //    .SetExtData(CreateInfo.ExtData)
+    //    .SetBulkData(CreateInfo.BulkData)
+    //    .SetGPUMask(CreateInfo.GPUMask)
+    //    .SetClearValue(CreateInfo.ClearValueBinding)
+    //);
     //TransitionResource(FExclusiveDepthStencil DepthStencilMode, FRHITexture * DepthTexture)
 
     //////////////////////////////////////////////////////////////////////////
